@@ -30,4 +30,12 @@ public class StudentDao {
     public Student getStudentById(int id) {
         return this.students.get(id);
     }
+
+    public void updateStudent(Student student) {
+        Student stud = students.get(student.getId());
+        stud.setCourse(student.getCourse());
+        stud.setName(student.getName());
+
+        students.put(student.getId(), student);
+    }
  }
